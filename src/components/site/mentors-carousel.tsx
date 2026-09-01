@@ -62,12 +62,7 @@ export function SemiCircleCarousel() {
     };
 
     return (
-        <div className="relative w-full overflow-hidden py-16 flex flex-col items-center justify-center min-h-[800px] bg-slate-50 border-t border-slate-200">
-            <div className="text-center mb-24 z-30 relative">
-                <h2 className="text-[3rem] font-extrabold text-navy-deep tracking-tight sm:text-6xl uppercase leading-none">
-                    Meet The <br /> <span className="text-[#00C9C6]">Mentors</span>
-                </h2>
-            </div>
+        <div className="relative w-full h-full flex flex-col items-center justify-center bg-transparent">
 
             {/* Container for the cards with custom perspective */}
             <div
@@ -119,11 +114,11 @@ export function SemiCircleCarousel() {
             </div>
 
             {/* Desktop Helper */}
-            <div className="flex gap-4 mt-12 z-30 relative">
-                <button onClick={() => setIndex(activeIndex - 1)} className="px-6 py-3 rounded-full bg-white border border-slate-200 shadow hover:bg-slate-50 font-bold text-navy-deep transition-transform active:scale-95">Prev</button>
-                <button onClick={() => setIndex(activeIndex + 1)} className="px-6 py-3 rounded-full bg-white border border-slate-200 shadow hover:bg-slate-50 font-bold text-navy-deep transition-transform active:scale-95">Next</button>
+            <div className="flex gap-4 mt-8 z-30 relative pb-4">
+                <button onClick={() => setIndex(activeIndex - 1)} className="px-6 py-2 rounded-full bg-white border border-slate-200 shadow hover:bg-slate-50 font-bold text-navy-deep transition-transform active:scale-95 text-sm">Prev</button>
+                <button onClick={() => setIndex(activeIndex + 1)} className="px-6 py-2 rounded-full bg-white border border-slate-200 shadow hover:bg-slate-50 font-bold text-navy-deep transition-transform active:scale-95 text-sm">Next</button>
             </div>
-            <p className="text-slate-400 mt-4 font-semibold text-sm">Scroll on the cards or use buttons to navigate</p>
+            <p className="text-slate-400 mt-2 pb-8 font-semibold text-xs hidden sm:block">Scroll on the cards or use buttons to navigate</p>
         </div>
     );
 }
