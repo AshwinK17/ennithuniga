@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import * as React from "react";
+import { cn } from "@/lib/utils";
 import { SiteNav } from "@/components/site/nav";
 import { Hero } from "@/components/site/hero";
 import { Credibility } from "@/components/site/stats";
@@ -47,6 +49,17 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [showSticky, setShowSticky] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setShowSticky(window.scrollY > 400);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <SiteNav />
@@ -67,7 +80,12 @@ function Index() {
       <SiteFooter />
 
       {/* Persistent Bottom Bar */}
-      <div className="fixed bottom-0 inset-x-0 z-40 bg-white/90 backdrop-blur-md border-t border-slate-200 shadow-[0_-15px_40px_rgba(0,0,0,0.05)] translate-y-0 transition-transform duration-300">
+      <div
+        className={cn(
+          "fixed bottom-0 inset-x-0 z-40 bg-white/90 backdrop-blur-md border-t border-slate-200 shadow-[0_-15px_40px_rgba(0,0,0,0.05)] transition-transform duration-500",
+          showSticky ? "translate-y-0" : "translate-y-full"
+        )}
+      >
         <div className="mx-auto flex h-auto py-4 sm:h-20 max-w-[1280px] items-center justify-between px-5 sm:px-8">
           <div className="hidden sm:block">
             <p className="font-extrabold text-navy-deep text-lg">Your transformation starts here.</p>

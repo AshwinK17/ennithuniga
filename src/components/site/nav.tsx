@@ -25,16 +25,16 @@ export function SiteNav() {
         scrolled ? "border-b border-border/70 shadow-sm" : "",
       )}
     >
-      <div className="mx-auto flex max-w-[1280px] items-center justify-between px-4 py-3 sm:px-8 lg:py-4">
+      <div className="mx-auto flex flex-col sm:flex-row max-w-[1280px] sm:items-center justify-between px-4 py-2 sm:px-8 lg:py-4 gap-y-2">
         <a href="/" className="flex items-center shrink-0">
-          <img src="/brand_name.png" alt="ENNI THUNIGA Logo" className="h-[22px] w-auto object-contain sm:h-7" />
+          <img src="/brand_name.png" alt="ENNI THUNIGA Logo" className="h-5 sm:h-7 w-auto object-contain" />
         </a>
-        <nav className="flex items-center justify-end gap-x-4 overflow-x-auto scrollbar-hide py-1 pl-4 sm:pl-0 sm:gap-x-5 lg:gap-x-8 w-full sm:w-auto">
+        <nav className="flex items-center justify-start sm:justify-end gap-x-5 overflow-x-auto scrollbar-hide py-1 w-full sm:w-auto pb-1">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-[0.65rem] font-semibold uppercase tracking-wide text-muted-foreground transition-colors hover:text-navy sm:text-xs lg:text-sm lg:normal-case lg:tracking-normal"
+              className="shrink-0 text-[0.65rem] font-bold uppercase tracking-widest text-slate-500 transition-colors hover:text-navy-deep sm:text-xs lg:text-sm lg:normal-case lg:tracking-normal"
             >
               {l.label}
             </a>
