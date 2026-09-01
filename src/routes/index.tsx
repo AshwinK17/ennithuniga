@@ -68,12 +68,12 @@ function Index() {
 
       {/* Persistent Bottom Bar */}
       <div className="fixed bottom-0 inset-x-0 z-40 bg-white/90 backdrop-blur-md border-t border-slate-200 shadow-[0_-15px_40px_rgba(0,0,0,0.05)] translate-y-0 transition-transform duration-300">
-        <div className="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-5 sm:px-8">
+        <div className="mx-auto flex h-auto py-4 sm:h-20 max-w-[1280px] items-center justify-between px-5 sm:px-8">
           <div className="hidden sm:block">
             <p className="font-extrabold text-navy-deep text-lg">Your transformation starts here.</p>
             <p className="text-sm font-semibold text-slate-500">Secure your limited spot for 2026.</p>
           </div>
-          <button className="ml-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#00C9C6] px-8 py-3.5 text-base font-bold text-white shadow-lg transition-transform hover:scale-105 hover:bg-[#00a3a1]">
+          <button className="w-full sm:w-auto ml-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#00C9C6] px-8 py-4 sm:py-3.5 text-base font-bold text-white shadow-lg transition-transform hover:scale-105 hover:bg-[#00a3a1] active:scale-95">
             Enroll Now <ArrowRight className="size-5" />
           </button>
         </div>

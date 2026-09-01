@@ -26,10 +26,10 @@ export function SiteNav() {
       )}
     >
       <div className="mx-auto flex max-w-[1280px] items-center justify-between px-4 py-3 sm:px-8 lg:py-4">
-        <a href="/" className="flex items-center">
+        <a href="/" className="flex items-center shrink-0">
           <img src="/brand_name.png" alt="ENNI THUNIGA Logo" className="h-[22px] w-auto object-contain sm:h-7" />
         </a>
-        <nav className="flex flex-wrap items-center justify-end gap-x-3 gap-y-1 sm:gap-x-5 lg:gap-x-8">
+        <nav className="flex items-center justify-end gap-x-4 overflow-x-auto scrollbar-hide py-1 pl-4 sm:pl-0 sm:gap-x-5 lg:gap-x-8 w-full sm:w-auto">
           {links.map((l) => (
             <a
               key={l.href}

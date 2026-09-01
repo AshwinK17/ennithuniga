@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 const MENTORS = Array.from({ length: 10 }, (_, i) => ({
@@ -10,15 +10,23 @@ const MENTORS = Array.from({ length: 10 }, (_, i) => ({
 
 export function SemiCircleCarousel() {
     const [activeIndex, setActiveIndex] = useState(4);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 640);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const getTransform = (index: number) => {
         const diff = index - activeIndex;
         const absDiff = Math.abs(diff);
 
         // Fan-out mathematical layout
-        const rotate = diff * 12; // Degrees rotation
-        const translateX = diff * 110; // X spread offset
-        const translateY = (absDiff * absDiff) * 12; // Parabola-like drop for outside cards
+        const rotate = diff * (isMobile ? 8 : 12); // Degrees rotation
+        const translateX = diff * (isMobile ? 55 : 110); // X spread offset
+        const translateY = (absDiff * absDiff) * (isMobile ? 6 : 12); // Parabola-like drop for outside cards
 
         // Middle card is scale 1, outer cards scale down
         const scale = 1 - (absDiff * 0.1);
@@ -64,7 +72,7 @@ export function SemiCircleCarousel() {
             {/* Container for the cards with custom perspective */}
             <div
                 onWheel={handleWheel}
-                className="relative w-full max-w-[1200px] h-[550px] flex items-center justify-center mx-auto perspective-[1000px]"
+                className="relative w-full max-w-[1200px] h-[400px] sm:h-[550px] flex items-center justify-center mx-auto perspective-[1000px]"
             >
                 {MENTORS.map((m, index) => {
                     const style = getTransform(index);
@@ -75,7 +83,8 @@ export function SemiCircleCarousel() {
                             key={m.id}
                             onClick={() => setIndex(index)}
                             className={cn(
-                                "absolute top-0 left-1/2 w-[340px] h-[480px] rounded-[2rem] cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col shadow-2xl border-4 overflow-hidden group select-none",
+                                "absolute top-0 left-1/2 rounded-[1.5rem] sm:rounded-[2rem] cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col shadow-2xl border-4 overflow-hidden group select-none",
+                                isMobile ? "w-[240px] h-[340px]" : "w-[340px] h-[480px]",
                                 isActive ? "border-[#00C9C6] shadow-[0_30px_70px_-15px_rgba(0,201,198,0.5)] z-[50]" : "border-white shadow-lg bg-gray-100",
                             )}
                             style={{

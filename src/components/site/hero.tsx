@@ -42,11 +42,11 @@ export function Hero() {
               </ul>
             </Reveal>
             <Reveal delay={240}>
-              <div className="mt-10 flex flex-col justify-start items-start gap-4 sm:flex-row">
-                <button className="inline-flex min-h-[3.5rem] items-center justify-center gap-2 rounded-full bg-[#00C9C6] px-8 text-base font-bold text-white shadow-lg transition-transform hover:scale-105 hover:bg-[#00a3a1]">
+              <div className="mt-8 flex flex-col justify-start items-start gap-4 sm:flex-row w-full sm:w-auto">
+                <button className="w-full sm:w-auto inline-flex min-h-[3.5rem] items-center justify-center gap-2 rounded-full bg-[#00C9C6] px-8 text-base font-bold text-white shadow-lg transition-transform hover:scale-105 hover:bg-[#00a3a1]">
                   Enroll Now <ArrowRight className="size-5" />
                 </button>
-                <button className="inline-flex min-h-[3.5rem] items-center justify-center gap-2 rounded-full border-2 border-slate-200 bg-white px-8 text-base font-bold text-slate-700 transition-colors hover:bg-slate-50 hover:text-blue-600">
+                <button className="w-full sm:w-auto inline-flex min-h-[3.5rem] items-center justify-center gap-2 rounded-full border-2 border-slate-200 bg-white px-8 text-base font-bold text-slate-700 transition-colors hover:bg-slate-50 hover:text-blue-600">
                   <Play className="size-5" /> Watch Video
                 </button>
               </div>
