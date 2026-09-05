@@ -67,7 +67,7 @@ export function SemiCircleCarousel() {
             {/* Container for the cards with custom perspective */}
             <div
                 onWheel={handleWheel}
-                className="relative w-full max-w-[1200px] h-[400px] sm:h-[550px] flex items-center justify-center mx-auto perspective-[1000px]"
+                className="relative w-full max-w-[1200px] h-[320px] sm:h-[450px] flex items-center justify-center mx-auto perspective-[1000px]"
             >
                 {MENTORS.map((m, index) => {
                     const style = getTransform(index);
@@ -79,7 +79,7 @@ export function SemiCircleCarousel() {
                             onClick={() => setIndex(index)}
                             className={cn(
                                 "absolute top-0 left-1/2 rounded-[1.5rem] sm:rounded-[2rem] cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col shadow-2xl border-4 overflow-hidden group select-none",
-                                isMobile ? "w-[240px] h-[340px]" : "w-[340px] h-[480px]",
+                                isMobile ? "w-[200px] h-[280px]" : "w-[280px] h-[400px]",
                                 isActive ? "border-[#00C9C6] shadow-[0_30px_70px_-15px_rgba(0,201,198,0.5)] z-[50]" : "border-white shadow-lg bg-gray-100",
                             )}
                             style={{

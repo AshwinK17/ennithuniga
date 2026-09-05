@@ -21,14 +21,15 @@ export function Hero() {
             </Reveal>
             <Reveal delay={90}>
               <h1 className="text-[2.8rem] leading-[1.1] sm:text-[4rem] lg:text-[4.5rem] font-extrabold tracking-tight text-navy-deep mb-6">
-                Master the Future of <br className="hidden sm:block" />
+                Take Your Career From <br className="hidden sm:block" />
                 <Typewriter
-                  words={["Tech & Placements.", "Cloud & DevOps.", "Software Engineering.", "Career Readiness."]}
+                  words={["Confusion", "Doubt", "Questions", "Uncertainty"]}
                   className="text-[#00C9C6] block text-[2.2rem] sm:text-[3rem] lg:text-[3.5rem] mt-2"
                   typingSpeed={150}
                   deletingSpeed={80}
                   pauseSpan={3000}
                 />
+                <span className="block text-[2.2rem] sm:text-[3rem] lg:text-[3.5rem] mt-2">To Clarity, With Us.</span>
               </h1>
             </Reveal>
             <Reveal delay={170}>
@@ -60,39 +61,6 @@ export function Hero() {
             </div>
           </Reveal>
         </div>
-      </section>
-
-      {/* Founder Space Area */}
-      <section id="founder" className="bg-slate-50 py-24 border-t border-slate-200">
-        <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
-          <Reveal>
-            <div className="flex items-center justify-between mb-12">
-              <h2 className="text-3xl font-extrabold text-navy-deep tracking-tight">Meet the Founder</h2>
-              <div className="h-[2px] flex-1 ml-10 bg-slate-200" />
-            </div>
-
-            <div className="grid md:grid-cols-[1fr_2fr] gap-12 items-center bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-xl">
-              {/* Founder Image Placeholder */}
-              <div className="aspect-[4/5] rounded-2xl bg-blue-50 border-2 border-dashed border-blue-200 flex items-center justify-center">
-                <p className="text-blue-400 font-semibold text-sm">[ Founder Image Space ]</p>
-              </div>
-
-              <div className="space-y-6 text-left">
-                <h3 className="text-2xl sm:text-3xl font-bold text-navy-deep leading-relaxed">
-                  "Our mission is to eliminate the gap between what colleges teach and what top tech companies demand."
-                </h3>
-                <p className="text-slate-600 text-lg leading-relaxed mb-6 font-medium">
-                  We don't just teach theory. We build confidence, upgrade practical technical skills, and simulate real interview pressures so our students are undeniable assets.
-                </p>
-                <div className="pt-4 flex flex-col text-left">
-                  <span className="font-bold text-blue-600 text-xl tracking-wide">[ Founder Name ]</span>
-                  <span className="text-slate-500 font-semibold mt-1">Lead Instructor & Founder</span>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
     </>
   );
 }
